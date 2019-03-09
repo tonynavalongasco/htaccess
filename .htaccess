@@ -1,0 +1,23 @@
+#Error pagina no encontrada
+#ErrorDocument 404 /error.html
+#Errores
+#400---Peticion no valida
+#401---Se requiere autorizacion
+#403---Acceso prohibido
+#404---Pagina no encontrada
+#500---Error interno del servidor
+#Para que no se muestre el arbol de directorios
+#options -indexes
+#Impedir la entrada al directorio
+#deny from all
+#Poner elbindice que quieras
+#DirectoryIndex error.html
+#Para redireccionar incluso si no esta el archivo
+#Redirect /error.html http://www.google.es
+#Permite reescribir las peticiones URL
+#RewriteEngine On
+#Si el archivo y la carpeta no existen hacer la siguiente reescritura
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#Redirecciona todas las peticiones a index
+#RewriteRule ^ index.php [QSA,L]
